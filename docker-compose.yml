@@ -39,7 +39,23 @@ services:
       - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
+  phppgadmin:
+    container_name: phppgadmin
+    image: bitnami/phppgadmin
+    ports:
+      - 8080:8080
+      - 8443:8443
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT_NUMBER: 5432
+    volumes:
+      - ppadata:/bitnami
+    networks:
+      - webnet
+    depends_on:
+      - postgres
 networks:
   webnet:
 volumes:
   pgdata:
+  ppadata:
