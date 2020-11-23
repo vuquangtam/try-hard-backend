@@ -1,8 +1,17 @@
 import { Module } from '@nestjs/common';
-import { PostsService } from './posts.service';
-import { PostsResolver } from './posts.resolver';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { services } from './services';
+import { resolvers } from './resolvers';
+import { repos } from './repos';
 
 @Module({
-  providers: [PostsResolver, PostsService]
+  imports: [
+    TypeOrmModule.forFeature(repos)
+  ],
+  providers: [
+    ...services,
+    ...resolvers
+  ]
 })
 export class PostsModule {}
