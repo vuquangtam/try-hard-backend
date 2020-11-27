@@ -3,7 +3,7 @@ import { CreateUserInput, UpdateUserInput } from '../dtos';
 import { UserRepo } from '../repos';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   constructor(private repo: UserRepo) {}
 
   async create(createUserInput: CreateUserInput) {

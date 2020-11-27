@@ -14,4 +14,4 @@ import { repos } from './repos';
     ...resolvers
   ]
 })
-export class PostsModule {}
+export class UserModule {}
