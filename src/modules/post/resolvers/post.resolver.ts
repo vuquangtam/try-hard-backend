@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { PostService } from '../services';
 import { Post } from '../entities';
 import { CreatePostInput, UpdatePostInput } from '../dtos';

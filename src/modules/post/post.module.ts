@@ -12,6 +12,9 @@ import { repos } from './repos';
   providers: [
     ...services,
     ...resolvers
+  ],
+  exports: [
+    ...services
   ]
 })
 export class PostModule {}

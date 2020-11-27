@@ -1,9 +1,12 @@
 import { PostService } from './post.service';
+import { PostTypeService } from './post-type.service';
 
 export const services = [
-    PostService
+    PostService,
+    PostTypeService
 ];
 
 export {
-    PostService
+    PostService,
+    PostTypeService
 }

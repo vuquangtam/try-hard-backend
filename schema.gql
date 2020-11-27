@@ -20,6 +20,11 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type PostType {
+  name: String
+  fields: [String!]
+}
+
 type User {
   id: String!
   username: String
@@ -33,6 +38,8 @@ type User {
 type Query {
   posts: [Post!]!
   post(id: String!): Post!
+  postTypes: [PostType!]!
+  postType(id: String!): PostType!
   users: [User!]!
   user(id: String!): User!
 }
