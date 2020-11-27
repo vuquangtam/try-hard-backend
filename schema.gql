@@ -2,6 +2,13 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type PostMeta {
+  id: String!
+  post: Post!
+  key: String!
+  value: String
+}
+
 type Post {
   id: String!
   type: String
@@ -13,6 +20,7 @@ type Post {
   parent: String
   createdAt: DateTime!
   updatedAt: DateTime!
+  metadata: [PostMeta!]!
 }
 
 """
@@ -72,6 +80,12 @@ input UpdatePostInput {
   status: String
   parent: String
   id: String!
+  metadata: [UpdatePostMetaInput!]
+}
+
+input UpdatePostMetaInput {
+  key: String!
+  value: String!
 }
 
 input CreateUserInput {

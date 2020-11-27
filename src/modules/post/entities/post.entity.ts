@@ -1,5 +1,6 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn } from "typeorm";
 import { ObjectType, Field } from '@nestjs/graphql';
+import { PostMeta } from "./post-meta.entity";
 
 @Entity()
 @ObjectType()
@@ -43,4 +44,8 @@ export class Post {
   @Field()
   @Column({ name: 'updated_at' })
   updatedAt: Date
+
+  @Field(type => [PostMeta])
+  @OneToMany(type => PostMeta, postMeta => postMeta.post)
+  metadata: Array<PostMeta>
 }
